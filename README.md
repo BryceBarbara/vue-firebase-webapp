@@ -8,6 +8,11 @@
   - 🛂 [Route-level authentication](./docs/authentication.md#per-route-authentication-control) control
   - 📡 Pre-built backend stub with Firebase functions
 
+## Documentation & Guides
+
+- [Getting Started](./docs/getting-started.md)
+- [More](./docs/README.md)
+
 ## Credits
 
 This template is based on [Vitesse](https://github.com/antfu/vitesse).
