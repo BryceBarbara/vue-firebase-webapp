@@ -1,0 +1,30 @@
+@import './markdown.css';
+
+:root {
+  --color-primary: #63e2b7;
+}
+
+html,
+body,
+#app {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --at-apply: transition-background-color;
+  /* background: #FFF; */
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html * {
+  border-color: rgba(255, 255, 255, 0.09);
+}
+
+.icon.loading {
+  --at-apply: animate-spin animate-reverse inline-block;
+}

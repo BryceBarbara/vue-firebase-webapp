@@ -1,0 +1,12 @@
+# Compiled JavaScript files
+dist/**/*.js
+dist/**/*.js.map
+
+# TypeScript v1 declaration files
+typings/
+
+# Node.js dependency directory
+node_modules/
+
+# do not commit the .env file since it contains sensitive information
+.env

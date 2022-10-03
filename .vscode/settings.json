@@ -1,0 +1,26 @@
+{
+  "cSpell.words": ["Vitesse", "Vite", "unocss", "vitest", "vueuse", "pinia", "demi", "antfu", "iconify", "intlify", "vitejs", "unplugin", "pnpm"],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.enabledFrameworks": ["vue-sfc", "vue"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": [
+    "frontend/locales"
+  ],
+  "i18n-ally.sortKeys": true,
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "frontend/dist": true,
+    "backend/dist": true,
+    "**/firebase-debug.log": true,
+  },
+  "editor.formatOnSave": false
+}

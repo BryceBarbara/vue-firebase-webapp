@@ -1,0 +1,73 @@
+app:
+  title: Vue & Firebase Web-App
+button:
+  about: Über
+  change-locale: Sprache ändern
+  sign-in: Einloggen
+  sign-out: Ausloggen
+  sign-out-title: Melden Sie sich vom Girokonto ab
+  toggle-sidebar: Seitenleiste umschalten
+  toggle-theme: Thema umschalten
+error:
+  firebase-internal: |-
+    Ein interner Fehler ist aufgetreten.
+    Bitte versuchen Sie es später erneut.
+  login-fallback: Beim Anmelden ist ein Fehler aufgetreten
+intro:
+  desc: Etwas, das die App-Entwicklung vereinfacht
+  signed-in: Du bist bereits angemeldet
+login:
+  desc: Etwas, das die App-Entwicklung vereinfacht
+  title: Vue & Firebase Web-App
+pages:
+  about:
+    back: Wieder nach Hause gehen
+    description: >-
+      {self} ist eine Vorlage, die Entwicklern hilft, Webanwendungen schneller
+      zum Laufen zu bringen. Es wurde mit {vue} und {firebase} erstellt.
+    page-description: Eine Beschreibung dieser App.
+    title: Um
+  api-test:
+    error:
+      remote-math-test: >-
+        Beim Abrufen des mathematischen Berechnungsergebnisses ist ein Fehler
+        aufgetreten.
+      welcome-test: Beim Abrufen der Begrüßungsnachricht ist ein Fehler aufgetreten.
+    page-description: Enthält verschiedene API-Aufrufe zum Testen des Backends.
+    remote-math-test:
+      button:
+        submit: Einreichen
+      error:
+        invalid-value: |-
+          Der eingegebene Wert ist ungültig.
+          Bitte geben Sie eine Zahl ein.
+        missing-result: |-
+          Vom Server ein leeres Ergebnis erhalten.
+          Vielleicht nochmal versuchen?
+        number-required: >-
+          Anfrage kann nicht gesendet werden, bitte geben Sie zuerst eine Nummer
+          ein.
+      label:
+        number-input: Zahl zu Quadrat
+        server-result: 'Serverergebnis:'
+      placeholder:
+        number-input: Zahl zum Quadrat eingeben...
+      result: '{output} am {when}'
+      title: Beispiel für serverseitige Mathematik
+    title: API-Test
+    welcome-test:
+      button:
+        refresh: Aktualisierung
+      label:
+        server-result: 'Nachricht vom Backend:'
+      title: Test der serverseitigen Begrüßungsnachricht
+  home-page:
+    main-description: >-
+      Hier können Sie Inhalte platzieren, die Sie Benutzern anzeigen möchten,
+      die sich anmelden oder nach Hause zurückkehren!
+    page-description: Die Homepage der Website.
+    title: Startseite
+    welcome: Willkommen, {name}!
+sidebar:
+  items:
+    pages: Seiten

@@ -1,0 +1,79 @@
+app:
+  title: Vue & Firebase Web App
+button:
+  about: About
+  back: Back
+  change-locale: Change language
+  go: GO
+  home: Home
+  sign-in: Sign in
+  sign-out: Sign out
+  sign-out-title: Sign out of the current account
+  toggle-dark: Toggle dark mode
+  toggle-langs: Change languages
+  toggle-sidebar: Toggle sidebar
+  toggle-theme: Toggle Theme
+error:
+  firebase-internal: An internal error occurred. Please try again later.
+  login-fallback: An error occurred while signing in
+intro:
+  aka: Also known as
+  desc: Something to make app development easier
+  dynamic-route: Demo of dynamic route
+  hi: Hi, {name}!
+  signed-in: You're already signed in
+  whats-your-name: What's your name?
+locale:
+  de: Deutsch
+  en: English
+login:
+  desc: Something to make app development easier
+  title: Vue & Firebase Web App
+not-found:
+  description: This page doesn't exist or was removed! We suggest you go back home.
+  go-home: Back to Home
+  title: 404 Not Found
+pages:
+  about:
+    title: About
+    page-description: A description of this app.
+    back: Go back home
+    description: >-
+      {self} is a template that helps developers get web applications up and going faster.
+      It's built with {vue} and {firebase}.
+  api-test:
+    error:
+      remote-math-test: There was an error while fetching the math calculation result.
+      welcome-test: There was an error while fetching the welcome message.
+    page-description: Contains various API calls to test the backend.
+    remote-math-test:
+      button:
+        submit: Submit
+      error:
+        invalid-value: The value input is invalid. Please input a number.
+        missing-result: Received an empty result from the server. Maybe try again?
+        number-required: Can't submit request, please input a number first.
+      label:
+        number-input: Number to Square
+        server-result: 'Server result:'
+      placeholder:
+        number-input: Input number to square...
+      result: '{output} at {when}'
+      title: Server-Side Math Example
+    title: API Test
+    welcome-test:
+      button:
+        refresh: Refresh
+      label:
+        server-result: 'Message from backend:'
+      title: Server-Side Welcome Message Test
+  home-page:
+    title: Home Page
+    page-description: The home page of the site.
+    main-description: >-
+      This is where you can put content that you'd like to display for users
+      logging in or returning home!
+    welcome: Welcome, {name}!
+sidebar:
+  items:
+    pages: Pages

@@ -1,0 +1,13 @@
+{
+  "name": "vue-firebase-webapp",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@7.12.2",
+  "scripts": {
+    "dev": "pnpm -r dev",
+    "populate-firebase": "node ./eng/scripts/populate-firebase.js",
+    "deploy:backend": "cd backend && pnpm run deploy",
+    "deploy:frontend": "cd frontend && pnpm run deploy",
+    "typecheck": "pnpm -r typecheck"
+  }
+}

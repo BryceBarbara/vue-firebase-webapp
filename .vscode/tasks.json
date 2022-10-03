@@ -1,0 +1,89 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "dependsOn": ["dev: backend", "dev: frontend"],
+      "label": "dev: all",
+      "problemMatcher": [],
+      "detail": "Starts the backend and frontend in development mode",
+      "icon": {
+        "id": "debug",
+        "color": "terminal.ansiWhite"
+      }
+    },
+    {
+      "isBackground": true,
+      "type": "npm",
+      "path": "backend",
+      "script": "dev",
+      "label": "dev: backend",
+      "detail": "Starts the backend in development mode",
+      "problemMatcher": ["$tsc-watch"],
+      "icon": {
+        "id": "debug",
+        "color": "terminal.ansiCyan"
+      }
+    },
+    {
+      "isBackground": true,
+      "type": "npm",
+      "path": "frontend",
+      "script": "dev",
+      "label": "dev: frontend",
+      "detail": "Starts the frontend in development mode",
+      "problemMatcher": ["$vite", "$tsc", "$node-sass"],
+      "icon": {
+        "id": "debug",
+        "color": "terminal.ansiGreen"
+      }
+    },
+    {
+      "type": "npm",
+      "path": "backend",
+      "script": "lint",
+      "label": "lint: backend",
+      "detail": "Lints the backend",
+      "problemMatcher": ["$eslint-stylish"],
+      "icon": {
+        "id": "check",
+        "color": "terminal.ansiCyan"
+      }
+    },
+    {
+      "type": "npm",
+      "path": "backend",
+      "script": "deploy",
+      "label": "deploy: backend",
+      "detail": "Deploys the backend to the cloud",
+      "problemMatcher": ["$eslint-stylish"],
+      "icon": {
+        "id": "cloud-upload",
+        "color": "terminal.ansiCyan"
+      }
+    },
+    {
+      "type": "npm",
+      "path": "frontend",
+      "script": "lint",
+      "label": "lint: frontend",
+      "detail": "Lints the frontend",
+      "problemMatcher": ["$eslint-stylish"],
+      "icon": {
+        "id": "check",
+        "color": "terminal.ansiGreen"
+      }
+    },
+    {
+      "type": "npm",
+      "path": "frontend",
+      "script": "deploy",
+      "label": "deploy: frontend",
+      "detail": "Deploys the frontend to the cloud",
+      "problemMatcher": ["$eslint-stylish"],
+      "icon": {
+        "id": "cloud-upload",
+        "color": "terminal.ansiGreen"
+      }
+    }
+  ]
+}

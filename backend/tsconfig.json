@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.json",
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["ES2020"],
+    "noImplicitReturns": true,
+    "outDir": "dist",
+    "types": ["node"],
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
