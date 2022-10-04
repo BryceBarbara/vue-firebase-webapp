@@ -14,7 +14,7 @@ const flagMap: Record<string, FunctionalComponent> = {
 }
 
 const attrs = useAttrs()
-const { t, availableLocales, locale } = useI18n({ useScope: 'global' })
+const { t, availableLocales, locale } = useI18n()
 
 const localeOptions = computed<DropdownOption[]>(() => {
   return availableLocales.map<DropdownOption>((l) => {
