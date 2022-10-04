@@ -21,7 +21,7 @@ jobs:
           cache: pnpm
 
       - name: Install
-        run: pnpm install
+        run: pnpm --filter=!cypress install
 
       - name: Lint
         run: pnpm --r run lint
@@ -37,7 +37,7 @@ jobs:
           cache: pnpm
 
       - name: Install
-        run: pnpm install
+        run: pnpm --filter=!cypress install
 
       - name: Typecheck
         run: pnpm --r run typecheck
@@ -61,7 +61,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
-      - run: pnpm install
+      - run: pnpm --filter=!cypress install
       - run: pnpm --r run test:unit
 
   test-e2e:
