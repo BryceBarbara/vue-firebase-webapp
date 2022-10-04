@@ -15,6 +15,18 @@
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js" // not sure this is correct
             ]
+        },
+        {
+          "type": "node",
+          "request": "launch",
+          "name": "Debug Current Frontend Test File",
+          "autoAttachChildProcesses": true,
+          "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+          "cwd": "${workspaceFolder}/frontend",
+          "program": "${workspaceRoot}/frontend/node_modules/vitest/vitest.mjs",
+          "args": ["run", "${relativeFile}"],
+          "smartStep": true,
+          "console": "integratedTerminal"
         }
     ]
 }
