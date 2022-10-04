@@ -24,7 +24,7 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: pnpm run lint
+        run: pnpm --r run lint
 
   typecheck:
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
         run: pnpm install
 
       - name: Typecheck
-        run: pnpm run typecheck
+        run: pnpm --r run typecheck
 
   test:
     runs-on: ${{ matrix.os }}
@@ -62,7 +62,7 @@ jobs:
           cache: pnpm
 
       - run: pnpm install
-      - run: pnpm run test:unit
+      - run: pnpm --r run test:unit
 
   test-e2e:
     runs-on: ubuntu-latest
@@ -91,6 +91,7 @@ jobs:
       - name: Cypress
         uses: cypress-io/github-action@v4
         with:
+          project: ./frontend
           install-command: echo
           build: pnpm run build
           start: npx vite --port 3333
