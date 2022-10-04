@@ -1,16 +1,20 @@
 <script setup lang="tsx">
 import type { DropdownOption } from 'naive-ui'
-import type { Component } from 'vue'
+import type { FunctionalComponent } from 'vue'
 import EnFlag from '~icons/flag/gb-4x3'
 import DeFlag from '~icons/flag/de-4x3'
 
-const flagMap: Record<string, Component> = {
+const emit = defineEmits<{
+  (e: 'change', locale: string): void
+}>()
+
+const flagMap: Record<string, FunctionalComponent> = {
   en: EnFlag,
   de: DeFlag,
 }
 
 const attrs = useAttrs()
-const { t, availableLocales, locale } = useI18n()
+const { t, availableLocales, locale } = useI18n({ useScope: 'global' })
 
 const localeOptions = computed<DropdownOption[]>(() => {
   return availableLocales.map<DropdownOption>((l) => {
@@ -31,6 +35,7 @@ function onSelectLocale(value: string) {
     return
   }
   locale.value = value
+  emit('change', value)
 }
 </script>
 
@@ -40,7 +45,7 @@ function onSelectLocale(value: string) {
     :options="localeOptions"
     @select="onSelectLocale"
   >
-    <n-button v-bind="attrs" :title="t('button.change-locale')">
+    <n-button v-bind="attrs" :title="t('button.change-locale')" data-test="trigger">
       <template #icon>
         <i-carbon-language />
       </template>
