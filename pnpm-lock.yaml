@@ -80,6 +80,7 @@ importers:
       vite-plugin-vue-layouts: ^0.7.0
       vite-plugin-vue-markdown: ^0.22.1
       vitest: ^0.23.4
+      vitest-github-actions-reporter: ^0.8.3
       vue: ^3.2.40
       vue-demi: ^0.13.11
       vue-i18n: ^9.2.2
@@ -133,9 +134,23 @@ importers:
       vite-plugin-vue-layouts: 0.7.0_rqa7paltdakk2bevhdd6jag4cm
       vite-plugin-vue-markdown: 0.22.1_vite@3.1.4
       vitest: 0.23.4_jsdom@20.0.1+sass@1.55.0
+      vitest-github-actions-reporter: 0.8.3_vitest@0.23.4
       vue-tsc: 0.40.13_typescript@4.8.4
 
 packages:
+
+  /@actions/core/1.10.0:
+    resolution: {integrity: sha512-2aZDDa3zrrZbP5ZYg159sNoLRb61nQ7awl5pSvIq5Qpj81vwDzdMRKzkWJGJuwVvWpvZKx7vspJALyvaaIQyug==}
+    dependencies:
+      '@actions/http-client': 2.0.1
+      uuid: 8.3.2
+    dev: true
+
+  /@actions/http-client/2.0.1:
+    resolution: {integrity: sha512-PIXiMVtz6VvyaRsGY268qvj57hXQEpsYogYOu2nrQhlf+XCGmZstmuZBbAybUl1nQGnvS1k1eEsQ69ZoD7xlSw==}
+    dependencies:
+      tunnel: 0.0.6
+    dev: true
 
   /@ampproject/remapping/2.2.0:
     resolution: {integrity: sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w==}
@@ -8954,6 +8969,11 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
+  /tunnel/0.0.6:
+    resolution: {integrity: sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==}
+    engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
+    dev: true
+
   /tweetnacl/0.14.5:
     resolution: {integrity: sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==}
     dev: true
@@ -9443,6 +9463,16 @@ packages:
       sass: 1.55.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /vitest-github-actions-reporter/0.8.3_vitest@0.23.4:
+    resolution: {integrity: sha512-3mpZil8jAiWGt+w5NWzrewcPnXlUiUujMmjeZ0zhcva7cNW6k8DyMIBiq3bRGkhEL1FoG1sHFUj8/ONXnhGvZQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      vitest: '>=0.16.0'
+    dependencies:
+      '@actions/core': 1.10.0
+      vitest: 0.23.4_jsdom@20.0.1+sass@1.55.0
     dev: true
 
   /vitest/0.23.4_jsdom@20.0.1+sass@1.55.0:

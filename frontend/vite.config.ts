@@ -16,6 +16,7 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 import Icons from 'unplugin-icons/vite'
+import GithubActionsReporter from 'vitest-github-actions-reporter'
 
 export default defineConfig({
   resolve: {
@@ -144,6 +145,10 @@ export default defineConfig({
     deps: {
       inline: ['@vue', '@vueuse', 'vue-demi', 'date-fns'],
     },
+    // https://github.com/sapphi-red/vitest-github-actions-reporter
+    reporters: process.env.GITHUB_ACTIONS
+      ? new GithubActionsReporter()
+      : 'default',
   },
 
   ssr: {
