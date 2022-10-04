@@ -83,7 +83,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
-      - uses: actions/cache@v3
       - run: pnpm install
 
       - name: Ensure Cypress is installed
