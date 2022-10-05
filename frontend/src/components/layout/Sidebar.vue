@@ -100,5 +100,6 @@ function findMatchingMenuToRoute(routePath: string): MenuOption | null {
     :collapsed-width="sidebarCollapsedWidth"
     :options="menuOptions"
     :render-label="renderMenuLabel"
+    data-test="sidebar"
   />
 </template>

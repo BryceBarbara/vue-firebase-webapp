@@ -47,14 +47,14 @@ const remoteMathErrorMessage = computed(() => {
         <NAlert v-else-if="welcomeErrorMessage" type="error">
           {{ welcomeErrorMessage }}
         </NAlert>
-        <p v-else-if="welcomeMessage.state.value" leading-none>
+        <p v-else-if="welcomeMessage.state.value" leading-none data-test="welcome-message-result">
           <span mr-1>
             {{ t('pages.api-test.welcome-test.label.server-result') }}
           </span>
           <span>{{ welcomeMessage.state.value.message }}</span>
         </p>
         <template #action>
-          <NButton :loading="welcomeMessage.isLoading.value" @click="() => welcomeMessage.execute()">
+          <NButton :loading="welcomeMessage.isLoading.value" data-test="welcome-message-refresh-button" @click="() => welcomeMessage.execute()">
             {{ t('pages.api-test.welcome-test.button.refresh') }}
           </NButton>
         </template>
@@ -72,10 +72,11 @@ const remoteMathErrorMessage = computed(() => {
               :placeholder="t('pages.api-test.remote-math-test.placeholder.number-input')"
               clearable
               min-w-280px
+              data-test="remote-math-input"
             />
           </NFormItem>
           <NFormItem>
-            <NButton :loading="mathTest.isLoading.value" attr-type="submit">
+            <NButton :loading="mathTest.isLoading.value" attr-type="submit" data-test="remote-math-submit-button">
               {{ t('pages.api-test.remote-math-test.button.submit') }}
             </NButton>
           </NFormItem>
@@ -84,8 +85,19 @@ const remoteMathErrorMessage = computed(() => {
           <span mr-1>
             {{ t('pages.api-test.remote-math-test.label.server-result') }}
           </span>
-          <n-skeleton v-if="mathTest.isLoading.value" text style="width: 5ch" />
-          <span v-else-if="mathTest.state.value">{{ t('pages.api-test.remote-math-test.result', { output: n(mathTest.state.value.output), when: d(mathTest.state.value.date, 'long') }) }}</span>
+          <n-skeleton v-if="mathTest.isLoading.value" text style="width: 20ch" />
+          <i18n-t
+            v-else-if="mathTest.state.value"
+            keypath="pages.api-test.remote-math-test.result"
+            tag="span"
+          >
+            <template #output>
+              <span data-test="remote-math-result-output">{{ n(mathTest.state.value.output) }}</span>
+            </template>
+            <template #when>
+              <span data-test="remote-math-result-when">{{ d(mathTest.state.value.date, 'long') }}</span>
+            </template>
+          </i18n-t>
           <span v-else>{{ t('pages.api-test.remote-math-test.error.missing-result') }}</span>
         </p>
         <NAlert v-else-if="remoteMathErrorMessage" type="error">

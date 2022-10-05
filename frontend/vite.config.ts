@@ -36,7 +36,7 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       extendRoute(route) {
         // Any route that isn't explicitly set not to public will be made to require auth
-        const isAnonymous = route.meta && (route.meta.requiresAuth === false || route.meta.requiresGuest === true)
+        const isAnonymous = route.meta && (route.meta.requiresAuth === false)
         if (isAnonymous)
           return route
         // Augment the route with meta that indicates that the route requires authentication.

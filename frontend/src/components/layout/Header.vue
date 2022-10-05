@@ -21,6 +21,7 @@ const showLanguageSelector = computed(() => availableLocales.length > 1)
       :title="t('button.toggle-sidebar')"
       class="sidebar-toggle"
       :class="{ flipped: sidebarCollapsed }"
+      data-test="sidebar-toggle-button"
       @click="() => toggleSidebar()"
     >
       <i-carbon-chevron-left class="icon" />
@@ -32,7 +33,12 @@ const showLanguageSelector = computed(() => availableLocales.length > 1)
         <component :is="themeIcon" />
       </template>
     </NButton>
-    <NButton quaternary :title="t('button.sign-out-title')" @click="signOut">
+    <NButton
+      quaternary
+      :title="t('button.sign-out-title')"
+      data-test="logout-button"
+      @click="signOut"
+    >
       {{ t('button.sign-out') }}
     </NButton>
   </div>

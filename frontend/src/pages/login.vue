@@ -80,6 +80,7 @@ onMounted(() => {
           :disabled="isSigningIn"
           type="primary"
           important-w-full
+          data-test="login-button"
           @click="signIn"
         >
           {{ t('button.sign-in') }}
@@ -98,6 +99,5 @@ onMounted(() => {
 <route lang="yaml">
 meta:
   requiresAuth: false
-  requiresGuest: true
   layout: bare
 </route>

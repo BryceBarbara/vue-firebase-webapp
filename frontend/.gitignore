@@ -1,0 +1,3 @@
+# Avoid commiting sensitive data
+cypress.env.json
+serviceAccount.json

@@ -23,6 +23,5 @@ TODO: Add a description for this document and what readers can expect to learn f
 <route lang="yaml">
 meta:
   requiresAuth: false # indicates whether the route requires authentication
-  requiresGuest: true # indicates whether the route is only available to guests
 </route>
 ```

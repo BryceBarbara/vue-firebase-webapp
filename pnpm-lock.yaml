@@ -53,9 +53,11 @@ importers:
       critters: ^0.0.16
       cross-env: ^7.0.3
       cypress: ^10.9.0
+      cypress-firebase: ^2.2.2
       eslint: ^8.24.0
       eslint-plugin-cypress: ^2.12.1
       firebase: ^9.10.0
+      firebase-admin: ^10.3.0
       https-localhost: ^4.7.1
       jsdom: ^20.0.1
       ky: ^0.31.3
@@ -112,8 +114,10 @@ importers:
       critters: 0.0.16
       cross-env: 7.0.3
       cypress: 10.9.0
+      cypress-firebase: 2.2.2_firebase-admin@10.3.0
       eslint: 8.24.0
       eslint-plugin-cypress: 2.12.1_eslint@8.24.0
+      firebase-admin: 10.3.0
       https-localhost: 4.7.1
       jsdom: 20.0.1
       markdown-it-link-attributes: 4.0.1
@@ -1622,6 +1626,15 @@ packages:
       - utf-8-validate
     dev: false
 
+  /@firebase/auth-interop-types/0.1.6_@firebase+util@1.6.3:
+    resolution: {integrity: sha512-etIi92fW3CctsmR9e3sYM3Uqnoq861M0Id9mdOPF6PWIg38BXL5k4upCNBggGUpLIS0H1grMOvy/wn1xymwe2g==}
+    peerDependencies:
+      '@firebase/app-types': 0.x
+      '@firebase/util': 1.x
+    dependencies:
+      '@firebase/util': 1.6.3
+    dev: true
+
   /@firebase/auth-interop-types/0.1.6_pbfwexsq7uf6mrzcwnikj3g37m:
     resolution: {integrity: sha512-etIi92fW3CctsmR9e3sYM3Uqnoq861M0Id9mdOPF6PWIg38BXL5k4upCNBggGUpLIS0H1grMOvy/wn1xymwe2g==}
     peerDependencies:
@@ -1665,6 +1678,19 @@ packages:
       '@firebase/util': 1.6.3
       tslib: 2.4.0
 
+  /@firebase/database-compat/0.2.6:
+    resolution: {integrity: sha512-Ls1BAODaiDYgeJljrIgSuC7JkFIY/HNhhNYebzZSoGQU62RuvnaO3Qgp2EH6h2LzHyRnycNadfh1suROtPaUIA==}
+    dependencies:
+      '@firebase/component': 0.5.17
+      '@firebase/database': 0.13.6
+      '@firebase/database-types': 0.9.13
+      '@firebase/logger': 0.3.3
+      '@firebase/util': 1.6.3
+      tslib: 2.4.0
+    transitivePeerDependencies:
+      - '@firebase/app-types'
+    dev: true
+
   /@firebase/database-compat/0.2.6_@firebase+app-types@0.7.0:
     resolution: {integrity: sha512-Ls1BAODaiDYgeJljrIgSuC7JkFIY/HNhhNYebzZSoGQU62RuvnaO3Qgp2EH6h2LzHyRnycNadfh1suROtPaUIA==}
     dependencies:
@@ -1682,6 +1708,19 @@ packages:
     dependencies:
       '@firebase/app-types': 0.7.0
       '@firebase/util': 1.6.3
+
+  /@firebase/database/0.13.6:
+    resolution: {integrity: sha512-5IZIBw2LT50Z8mwmKYmdX37p+Gg2HgeJsrruZmRyOSVgbfoY4Pg87n1uFx6qWqDmfL6HwQgwcrrQfVIXE3C5SA==}
+    dependencies:
+      '@firebase/auth-interop-types': 0.1.6_@firebase+util@1.6.3
+      '@firebase/component': 0.5.17
+      '@firebase/logger': 0.3.3
+      '@firebase/util': 1.6.3
+      faye-websocket: 0.11.4
+      tslib: 2.4.0
+    transitivePeerDependencies:
+      - '@firebase/app-types'
+    dev: true
 
   /@firebase/database/0.13.6_@firebase+app-types@0.7.0:
     resolution: {integrity: sha512-5IZIBw2LT50Z8mwmKYmdX37p+Gg2HgeJsrruZmRyOSVgbfoY4Pg87n1uFx6qWqDmfL6HwQgwcrrQfVIXE3C5SA==}
@@ -4031,6 +4070,14 @@ packages:
     resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
     dev: false
 
+  /cypress-firebase/2.2.2_firebase-admin@10.3.0:
+    resolution: {integrity: sha512-EfpSJ8z8WXnIM1ezbxFUk51Kt6jaFFnEZp6uOoSgb9DF58hwxJ+MoSw1rpyX8Kwuiv/14pFpDiI1U+ZvSTK5fg==}
+    peerDependencies:
+      firebase-admin: '>=8'
+    dependencies:
+      firebase-admin: 10.3.0
+    dev: true
+
   /cypress/10.9.0:
     resolution: {integrity: sha512-MjIWrRpc+bQM9U4kSSdATZWZ2hUqHGFEQTF7dfeZRa4MnalMtc88FIE49USWP2ZVtfy5WPBcgfBX+YorFqGElA==}
     engines: {node: '>=12.0.0'}
@@ -5396,6 +5443,27 @@ packages:
     dependencies:
       locate-path: 6.0.0
       path-exists: 4.0.0
+    dev: true
+
+  /firebase-admin/10.3.0:
+    resolution: {integrity: sha512-A0wgMLEjyVyUE+heyMJYqHRkPVjpebhOYsa47RHdrTM4ltApcx8Tn86sUmjqxlfh09gNnILAm7a8q5+FmgBYpg==}
+    engines: {node: '>=12.7.0'}
+    dependencies:
+      '@fastify/busboy': 1.1.0
+      '@firebase/database-compat': 0.2.6
+      '@firebase/database-types': 0.9.13
+      '@types/node': 18.8.2
+      jsonwebtoken: 8.5.1
+      jwks-rsa: 2.1.4
+      node-forge: 1.3.1
+      uuid: 8.3.2
+    optionalDependencies:
+      '@google-cloud/firestore': 4.15.1
+      '@google-cloud/storage': 5.20.5
+    transitivePeerDependencies:
+      - '@firebase/app-types'
+      - encoding
+      - supports-color
     dev: true
 
   /firebase-admin/10.3.0_@firebase+app-types@0.7.0:

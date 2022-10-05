@@ -31,28 +31,7 @@ const firebaseAppDetailDefaults = {
 
 class Script {
   /**
-   *
-   * @param {string[]} args
-   * @returns {ScriptOptions}
-   */
-  static getScriptOptionsFromArgs(args) {
-    /** @type {ScriptOptions} */
-    const options = {
-      detailsFileName: defaultDetailsFileName,
-      forceEnabled: false,
-    }
-
-    options.forceEnabled = args.includes('--force')
-    if (options.forceEnabled)
-      args = args.filter(arg => arg !== '--force')
-    if (args.length > 0 && args[0])
-      options.detailsFileName = args[0]
-
-    return options
-  }
-
-  /**
-   *
+   * The main entry point for the script.
    * @param {string[]} args
    */
   static async main(args) {
@@ -76,6 +55,27 @@ class Script {
 
     const authProviderFilePath = path.join(process.cwd(), 'frontend/src/firebase/auth-provider.g.ts')
     FirebaseTools.updateAuthProviderTs(authProviderFilePath, fbDetails, options)
+  }
+
+  /**
+   * Attempts to parse the script options from the given command line arguments.
+   * @param {string[]} args The command line arguments.
+   * @returns {ScriptOptions}
+   */
+  static getScriptOptionsFromArgs(args) {
+    /** @type {ScriptOptions} */
+    const options = {
+      detailsFileName: defaultDetailsFileName,
+      forceEnabled: false,
+    }
+
+    options.forceEnabled = args.includes('--force')
+    if (options.forceEnabled)
+      args = args.filter(arg => arg !== '--force')
+    if (args.length > 0 && args[0])
+      options.detailsFileName = args[0]
+
+    return options
   }
 }
 
