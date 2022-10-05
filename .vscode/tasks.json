@@ -4,17 +4,23 @@
     {
       "label": "dev: all",
       "detail": "Starts the frontend and backend in development mode",
-      "dependsOn": ["dev: backend", "dev: frontend"],
+      "dependsOn": [
+        "dev: backend",
+        "dev: frontend"
+      ],
       "problemMatcher": [],
       "icon": {
-        "id": "debug",
+        "id": "run",
         "color": "terminal.ansiWhite"
       }
     },
     {
       "label": "lint: all",
       "detail": "Lints the frontend and backend",
-      "dependsOn": ["lint: backend", "lint: frontend"],
+      "dependsOn": [
+        "lint: backend",
+        "lint: frontend"
+      ],
       "problemMatcher": [],
       "icon": {
         "id": "check",
@@ -24,7 +30,10 @@
     {
       "label": "deploy: all",
       "detail": "Deploys the frontend and backend to the cloud",
-      "dependsOn": ["deploy: backend", "deploy: frontend"],
+      "dependsOn": [
+        "deploy: backend",
+        "deploy: frontend"
+      ],
       "problemMatcher": [],
       "icon": {
         "id": "cloud-upload",
@@ -38,9 +47,11 @@
       "path": "backend",
       "script": "dev",
       "isBackground": true,
-      "problemMatcher": ["$tsc-watch"],
+      "problemMatcher": [
+        "$tsc-watch"
+      ],
       "icon": {
-        "id": "debug",
+        "id": "run",
         "color": "terminal.ansiCyan"
       }
     },
@@ -51,29 +62,35 @@
       "path": "frontend",
       "script": "dev",
       "isBackground": true,
-      "problemMatcher": ["$vite", "$tsc", "$node-sass"],
+      "problemMatcher": [
+        "$vite",
+        "$tsc",
+        "$node-sass"
+      ],
       "icon": {
-        "id": "debug",
+        "id": "run",
         "color": "terminal.ansiGreen"
       }
     },
     {
-      "label": "dev-inspect: backend",
-      "detail": "Starts the backend in development mode with inspector",
+      "label": "debug: backend",
+      "detail": "Starts the backend in development mode with inspector enabled",
       "type": "npm",
       "path": "backend",
       "script": "dev:inspect",
       "isBackground": true,
-      "problemMatcher": [{
-        "base": "$tsc-watch",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": "Starting compilation in watch mode...",
-          "endsPattern": "It is now safe to connect your app."
+      "problemMatcher": [
+        {
+          "base": "$tsc-watch",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Starting compilation in watch mode...",
+            "endsPattern": "It is now safe to connect your app."
+          }
         }
-      }],
+      ],
       "icon": {
-        "id": "search",
+        "id": "debug",
         "color": "terminal.ansiCyan"
       }
     },
@@ -83,7 +100,9 @@
       "type": "npm",
       "path": "backend",
       "script": "lint",
-      "problemMatcher": ["$eslint-stylish"],
+      "problemMatcher": [
+        "$eslint-stylish"
+      ],
       "icon": {
         "id": "check",
         "color": "terminal.ansiCyan"
@@ -95,7 +114,9 @@
       "type": "npm",
       "path": "frontend",
       "script": "lint",
-      "problemMatcher": ["$eslint-stylish"],
+      "problemMatcher": [
+        "$eslint-stylish"
+      ],
       "icon": {
         "id": "check",
         "color": "terminal.ansiGreen"
@@ -107,7 +128,9 @@
       "type": "npm",
       "path": "backend",
       "script": "deploy",
-      "problemMatcher": ["$eslint-stylish"],
+      "problemMatcher": [
+        "$eslint-stylish"
+      ],
       "icon": {
         "id": "cloud-upload",
         "color": "terminal.ansiCyan"
@@ -119,7 +142,9 @@
       "type": "npm",
       "path": "frontend",
       "script": "deploy",
-      "problemMatcher": ["$eslint-stylish"],
+      "problemMatcher": [
+        "$eslint-stylish"
+      ],
       "icon": {
         "id": "cloud-upload",
         "color": "terminal.ansiGreen"
