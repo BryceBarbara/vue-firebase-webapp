@@ -52,7 +52,7 @@
     "jsdom": "^20.0.1",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-shiki": "^0.5.1",
-    "pnpm": "^7.13.1",
+    "pnpm": "^7.33.4",
     "sass": "^1.55.0",
     "shiki": "^0.10.1",
     "taze": "^0.7.6",

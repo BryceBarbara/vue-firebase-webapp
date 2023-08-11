@@ -66,7 +66,7 @@ importers:
       markdown-it-shiki: ^0.5.1
       naive-ui: ^2.33.3
       pinia: ^2.0.22
-      pnpm: ^7.13.1
+      pnpm: ^7.33.4
       sass: ^1.55.0
       shiki: ^0.10.1
       taze: ^0.7.6
@@ -122,7 +122,7 @@ importers:
       jsdom: 20.0.1
       markdown-it-link-attributes: 4.0.1
       markdown-it-shiki: 0.5.1
-      pnpm: 7.13.1
+      pnpm: 7.33.4
       sass: 1.55.0
       shiki: 0.10.1
       taze: 0.7.6
@@ -7881,8 +7881,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/7.13.1:
-    resolution: {integrity: sha512-Nu1LzxlH3qdIFe0DJ5SciqBl9i7t/eW+c0zKf9g8TXRo20EhXy/e9YwCLY2fEwbIYL/3gZ4zuys010PRpsbHFQ==}
+  /pnpm/7.33.4:
+    resolution: {integrity: sha512-xEbf/tkwHpGM/GXq5U/sDSiE6ykLPho+o71PHNRWqkVLm6dJe4G/5Pg619Ow32ovekrr7pii5qtfamujB/+1bA==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: true
